@@ -140,3 +140,42 @@ function share(platform) {
 
   window.open(links[platform], '_blank');
 }
+
+// Accessibility improvements
+document.querySelectorAll('button, a').forEach(el => {
+  if (!el.getAttribute('aria-label')) {
+    el.setAttribute('aria-label', el.textContent.trim());
+  }
+});
+
+// Track important events
+function trackEvent(category, action, label) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', action, {
+      'event_category': category,
+      'event_label': label
+    });
+  }
+}
+
+// Add tracking to important actions
+document.querySelector('.copy-btn').addEventListener('click', () => {
+  trackEvent('Token', 'Copy Address', 'Contract Address');
+});
+
+document.getElementById('newsletter-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const email = e.target.querySelector('input[type="email"]').value;
+  // Add your newsletter signup logic here
+  console.log('Newsletter signup:', email);
+  alert('Thank you for subscribing!');
+  trackEvent('Engagement', 'Newsletter Signup', 'Footer Form');
+});
+
+// Enhance animations
+const animateElements = document.querySelectorAll('[data-aos]');
+animateElements.forEach(el => {
+  el.addEventListener('animationend', () => {
+    el.classList.add('aos-finished');
+  });
+});
