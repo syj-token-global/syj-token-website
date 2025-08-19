@@ -93,3 +93,50 @@ async function updatePriceData() {
 // Update price every 30 seconds
 setInterval(updatePriceData, 30000);
 updatePriceData();
+
+// Initialize animations
+AOS.init({
+  duration: 800,
+  once: true
+});
+
+// Scroll Progress Bar
+window.onscroll = function() {
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scrolled = (winScroll / height) * 100;
+  document.querySelector(".scroll-progress").style.width = scrolled + "%";
+};
+
+// Countdown Timer
+function updateCountdown() {
+  const launchDate = new Date('2024-03-01T00:00:00').getTime();
+  const now = new Date().getTime();
+  const gap = launchDate - now;
+
+  const second = 1000;
+  const minute = second * 60;
+  const hour = minute * 60;
+  const day = hour * 24;
+
+  document.getElementById('days').innerText = Math.floor(gap / day);
+  document.getElementById('hours').innerText = Math.floor((gap % day) / hour);
+  document.getElementById('minutes').innerText = Math.floor((gap % hour) / minute);
+  document.getElementById('seconds').innerText = Math.floor((gap % minute) / second);
+}
+
+setInterval(updateCountdown, 1000);
+
+// Social Share
+function share(platform) {
+  const url = encodeURIComponent(window.location.href);
+  const text = encodeURIComponent('Check out SYJ Token - Powering crypto education in India!');
+  
+  const links = {
+    twitter: `https://twitter.com/intent/tweet?url=${url}&text=${text}`,
+    telegram: `https://t.me/share/url?url=${url}&text=${text}`,
+    whatsapp: `https://wa.me/?text=${text}%20${url}`
+  };
+
+  window.open(links[platform], '_blank');
+}
