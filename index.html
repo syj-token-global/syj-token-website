@@ -3,10 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SYJ Token | Sayanjali Nexus</title>
+  <title>SYJ Token | Sayanjali Nexus - Crypto Education & Commerce Platform</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="SYJ Token powers real-world commerce and crypto education through the Sayanjali Nexus ecosystem. Join India's leading crypto education platform.">
+  <meta name="keywords" content="SYJ Token, Sayanjali Nexus, crypto education, blockchain, India crypto, tokenomics">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SYJ Token | Sayanjali Nexus">
+  <meta property="og:description" content="Powering real-world commerce and crypto education">
+  <meta property="og:image" content="assets/social-share.jpg">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SYJ Token">
+  <meta name="twitter:description" content="Join India's leading crypto education platform">
+  
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "SYJ Token",
+      "url": "https://www.sayanjalinexus.com",
+      "logo": "assets/logo.png",
+      "description": "Powering real-world commerce and crypto education through the Sayanjali Nexus ecosystem."
+    }
+  </script>
 </head>
 <body>
+  <div id="loader" class="loader">
+    <div class="spinner"></div>
+  </div>
 
   <header class="site-header">
     <div class="container">
@@ -20,8 +53,30 @@
         <a href="#contact">Contact</a>
       </nav>
       <div class="menu-toggle" id="menu-toggle">☰</div>
+      <div class="social-links">
+        <a href="https://twitter.com/syjtoken" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://t.me/syjtoken" target="_blank" rel="noopener">Telegram</a>
+      </div>
+      <div class="utility-nav">
+        <select id="language-switcher" class="language-switcher">
+          <option value="en">English</option>
+          <option value="hi">हिंदी</option>
+          <option value="bn">বাংলা</option>
+        </select>
+        <button id="theme-toggle" class="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
     </div>
   </header>
+
+  <div class="price-ticker">
+    <div class="container">
+      <span>SYJ Price: <strong id="token-price">$0.00</strong></span>
+      <span>24h Change: <strong id="price-change">0.00%</strong></span>
+      <span>Market Cap: <strong id="market-cap">$0</strong></span>
+    </div>
+  </div>
 
   <section id="home" class="hero">
     <div class="container">
@@ -65,7 +120,24 @@
   <section id="education" class="section">
     <div class="container">
       <h2>SYJ Academy</h2>
-      <p>India-first education for crypto adoption — from beginner to expert. Tutorials, courses, quizzes, and certifications included.</p>
+      <p>India-first education for crypto adoption — from beginner to expert.</p>
+      <div class="course-grid">
+        <div class="course-card">
+          <h3>Crypto Basics</h3>
+          <p>Start your journey into cryptocurrency</p>
+          <span class="badge">Free</span>
+        </div>
+        <div class="course-card">
+          <h3>Trading 101</h3>
+          <p>Learn cryptocurrency trading fundamentals</p>
+          <span class="badge">Premium</span>
+        </div>
+        <div class="course-card">
+          <h3>DeFi Mastery</h3>
+          <p>Advanced DeFi protocols and strategies</p>
+          <span class="badge">Premium</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -77,13 +149,64 @@
     </div>
   </section>
 
+  <section id="buy" class="section bg-gradient">
+    <div class="container">
+      <h2>Buy SYJ Token</h2>
+      <div class="exchange-grid">
+        <a href="#" class="exchange-card">
+          <img src="assets/pancakeswap.png" alt="PancakeSwap">
+          <span>Buy on PancakeSwap</span>
+        </a>
+        <a href="#" class="exchange-card">
+          <img src="assets/uniswap.png" alt="Uniswap">
+          <span>Buy on Uniswap</span>
+        </a>
+      </div>
+      <div class="token-address">
+        <p>Contract Address:</p>
+        <code>0x123...abc</code>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+  </section>
+
   <section id="contact" class="section">
     <div class="container">
       <h2>Contact Us</h2>
-      <p>Visit: <a href="https://www.sayanjalinexus.com">www.sayanjalinexus.com</a></p>
-      <p>Email: <a href="mailto:info@sayanjalinexus.com">info@sayanjalinexus.com</a></p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>Visit: <a href="https://www.sayanjalinexus.com">www.sayanjalinexus.com</a></p>
+          <p>Email: <a href="mailto:info@sayanjalinexus.com">info@sayanjalinexus.com</a></p>
+        </div>
+        <form id="contact-form" class="contact-form">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn primary-btn">Send Message</button>
+        </form>
+      </div>
     </div>
   </section>
+
+  <section id="newsletter" class="section bg-dark">
+    <div class="container">
+      <h2>Stay Updated</h2>
+      <p>Get the latest SYJ Token news and updates</p>
+      <form class="newsletter-form" id="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit" class="btn primary-btn">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <div id="cookie-notice" class="cookie-notice">
+    <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+    <button id="accept-cookies" class="btn secondary-btn">Accept</button>
+  </div>
+
+  <button id="back-to-top" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
   <footer class="footer">
     <div class="container">
