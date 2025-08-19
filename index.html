@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -78,11 +79,34 @@
     </div>
   </div>
 
+  <div class="scroll-progress"></div>
+
   <section id="home" class="hero">
     <div class="container">
       <h1>Welcome to SYJ Token</h1>
       <p>Powering real-world commerce and crypto education through the Sayanjali Nexus ecosystem.</p>
       <a href="#tokenomics" class="btn primary-btn">Explore Tokenomics</a>
+      <div class="countdown-timer">
+        <h3>Token Launch In:</h3>
+        <div class="countdown-boxes">
+          <div class="countdown-box">
+            <span id="days">00</span>
+            <label>Days</label>
+          </div>
+          <div class="countdown-box">
+            <span id="hours">00</span>
+            <label>Hours</label>
+          </div>
+          <div class="countdown-box">
+            <span id="minutes">00</span>
+            <label>Minutes</label>
+          </div>
+          <div class="countdown-box">
+            <span id="seconds">00</span>
+            <label>Seconds</label>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -208,12 +232,19 @@
     <i class="fas fa-arrow-up"></i>
   </button>
 
+  <div class="social-share">
+    <button onclick="share('twitter')"><i class="fab fa-twitter"></i></button>
+    <button onclick="share('telegram')"><i class="fab fa-telegram"></i></button>
+    <button onclick="share('whatsapp')"><i class="fab fa-whatsapp"></i></button>
+  </div>
+
   <footer class="footer">
     <div class="container">
       <p>© 2025 Sayanjali Nexus Private Limited</p>
     </div>
   </footer>
 
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

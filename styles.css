@@ -201,6 +201,70 @@ body {
   resize: vertical;
 }
 
+/* Scroll Progress */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--green);
+  width: 0%;
+  z-index: 1001;
+  transition: width 0.2s ease;
+}
+
+/* Countdown Timer */
+.countdown-timer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.countdown-boxes {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.countdown-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  min-width: 80px;
+}
+
+.countdown-box span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: block;
+}
+
+/* Social Share */
+.social-share {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-share button {
+  background: var(--green);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.social-share button:hover {
+  transform: scale(1.1);
+}
+
 /* Animations */
 @keyframes spin {
   0% { transform: rotate(0deg); }
