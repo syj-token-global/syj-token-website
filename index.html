@@ -42,13 +42,18 @@
   </script>
 
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR-ACTUAL-ID"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', 'G-YOUR-ACTUAL-ID');
   </script>
+
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' https://www.googletagmanager.com https://cdnjs.cloudflare.com https://unpkg.com 'unsafe-inline'; style-src 'self' https://cdnjs.cloudflare.com https://unpkg.com 'unsafe-inline';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
 </head>
 <body>
   <div id="loader" class="loader">
@@ -66,7 +71,7 @@
         <a href="#whitepaper">Whitepaper</a>
         <a href="#contact">Contact</a>
       </nav>
-      <div class="menu-toggle" id="menu-toggle">☰</div>
+      <div class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">☰</div>
       <div class="social-links">
         <a href="https://twitter.com/syjtoken" target="_blank" rel="noopener">Twitter</a>
         <a href="https://t.me/syjtoken" target="_blank" rel="noopener">Telegram</a>
@@ -215,10 +220,10 @@
           <p>Visit: <a href="https://www.sayanjalinexus.com">www.sayanjalinexus.com</a></p>
           <p>Email: <a href="mailto:info@sayanjalinexus.com">info@sayanjalinexus.com</a></p>
         </div>
-        <form id="contact-form" class="contact-form">
-          <input type="text" placeholder="Your Name" required>
-          <input type="email" placeholder="Your Email" required>
-          <textarea placeholder="Your Message" required></textarea>
+        <form id="contact-form" class="contact-form" aria-label="Contact form">
+          <input type="text" placeholder="Your Name" required aria-label="Your name">
+          <input type="email" placeholder="Your Email" required aria-label="Your email">
+          <textarea placeholder="Your Message" required aria-label="Your message"></textarea>
           <button type="submit" class="btn primary-btn">Send Message</button>
         </form>
       </div>
@@ -245,10 +250,10 @@
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <div class="social-share">
-    <button onclick="share('twitter')"><i class="fab fa-twitter"></i></button>
-    <button onclick="share('telegram')"><i class="fab fa-telegram"></i></button>
-    <button onclick="share('whatsapp')"><i class="fab fa-whatsapp"></i></button>
+  <div class="social-share" aria-label="Share on social media">
+    <button onclick="share('twitter')" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></button>
+    <button onclick="share('telegram')" aria-label="Share on Telegram"><i class="fab fa-telegram"></i></button>
+    <button onclick="share('whatsapp')" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></button>
   </div>
 
   <footer class="footer">
@@ -259,5 +264,11 @@
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="script.js"></script>
+
+  <noscript>
+    <div class="alert alert-warning">
+      Please enable JavaScript to ensure the best experience on our website.
+    </div>
+  </noscript>
 </body>
 </html>
